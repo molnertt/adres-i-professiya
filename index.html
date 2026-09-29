@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Адрес сменился. Профессия — нет | Ночлежка</title>
+  <title>Иван Васильевич меняет адрес | Ночлежка</title>
   <meta name="description" content="Истории людей, чья профессия и опыт остаются с ними после потери дома. Поддержите работу Ночлежки.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f3d642'/%3E%3Cpath d='M15 12v40h8V35h18v17h8V12h-8v16H23V12z' fill='%2317191a'/%3E%3C/svg%3E">
   <style>
+    @font-face { font-family:"Neucha"; src:url("Neucha.ttf") format("truetype"); font-display:swap; }
     :root { --yellow:#f3d642; --ink:#17191a; --paper:#f7eed2; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
@@ -26,19 +27,40 @@
     .mobile-menu nav { position:absolute; z-index:20; right:0; top:45px; min-width:190px; background:var(--yellow); border:1px solid var(--ink); display:grid; }
     .mobile-menu nav a { padding:15px; text-decoration:none; border-bottom:1px solid var(--ink); }
     .mobile-menu nav a:last-child { border-bottom:0; }
-    .hero { display:grid; grid-template-columns:1.07fr .93fr; gap:48px; padding-block:84px 90px; min-height:740px; align-items:stretch; }
+    .hero { display:grid; grid-template-columns:1.07fr .93fr; gap:0; padding-block:62px 74px; min-height:690px; align-items:stretch; }
+    .hero-copy { background:var(--ink); color:var(--yellow); padding:48px clamp(30px,4vw,65px) 48px; display:flex; flex-direction:column; align-items:flex-start; }
     .eyebrow { font-size:13px; letter-spacing:.12em; text-transform:uppercase; }
     h1,h2,h3,p { margin:0; }
-    .hero h1 { margin-top:50px; font-size:clamp(72px,6.45vw,108px); line-height:.88; letter-spacing:-.058em; text-transform:uppercase; max-width:770px; }
-    .hero .sub { font-size:22px; line-height:1.38; max-width:480px; margin-top:44px; }
+    .hero h1 { margin-top:45px; font-family:"Neucha","Arial Narrow",Arial,sans-serif; font-size:clamp(62px,5.7vw,94px); line-height:.9; letter-spacing:-.02em; text-transform:uppercase; max-width:770px; }
+    .hero h1 span { display:block; }
+    .hero h1 span:nth-child(2) { padding-left:.3em; }
+    .hero h1 span:nth-child(3) { font-size:.72em; padding-left:.06em; margin-top:.12em; }
+    .hero .slogan { font-size:20px; line-height:1.2; text-transform:uppercase; margin-top:34px; padding-top:20px; border-top:1px solid currentColor; max-width:500px; }
+    .hero .sub { font-size:17px; line-height:1.38; max-width:480px; margin-top:17px; }
     .button { display:inline-flex; align-items:center; justify-content:center; min-width:285px; padding:18px 22px; background:var(--ink); color:var(--yellow); font-size:15px; font-weight:600; text-decoration:none; text-transform:uppercase; letter-spacing:.04em; transition:transform .2s ease; }
     .button:hover { transform:translateY(-3px); }
     a:focus-visible,summary:focus-visible { outline:3px solid currentColor; outline-offset:4px; }
-    .hero .button { margin-top:50px; }
+    .hero .button { margin-top:auto; background:var(--yellow); color:var(--ink); border:1px solid var(--yellow); }
     .hero-photo { min-height:570px; position:relative; overflow:hidden; display:block; text-decoration:none; }
     .hero-photo img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; object-position:66% center; }
     .photo-caption { position:absolute; bottom:0; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:18px 20px; background:var(--yellow); font-size:13px; text-transform:uppercase; letter-spacing:.04em; }
     .photo-caption span:last-child { text-decoration:underline; text-underline-offset:4px; }
+    .time-machine { background:var(--paper); padding:95px 0 105px; }
+    .time-machine h2 { font-size:clamp(57px,5vw,79px); line-height:.92; letter-spacing:-.052em; text-transform:uppercase; max-width:900px; }
+    .time-machine .lead { font-size:20px; line-height:1.35; margin-top:20px; max-width:700px; }
+    .time-grid { display:grid; grid-template-columns:240px 1fr; border:1px solid var(--ink); margin-top:52px; min-height:300px; }
+    .time-controls { display:grid; grid-template-rows:repeat(3,1fr); border-right:1px solid var(--ink); }
+    .time-controls button { text-align:left; border:0; border-bottom:1px solid var(--ink); background:transparent; color:var(--ink); padding:18px 23px; font:400 23px/1.1 "Arial Narrow",Arial,sans-serif; text-transform:uppercase; cursor:pointer; }
+    .time-controls button:last-child { border-bottom:0; }
+    .time-controls button[aria-pressed="true"] { background:var(--yellow); font-weight:700; }
+    .time-controls button:focus-visible { outline:3px solid var(--ink); outline-offset:-5px; }
+    .time-display { display:grid; grid-template-columns:1fr 1fr; }
+    .time-frame { padding:34px clamp(25px,3vw,50px); display:flex; flex-direction:column; justify-content:space-between; }
+    .time-frame small { font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
+    .time-frame strong { font:400 clamp(32px,3.3vw,50px)/1.01 "Arial Narrow",Arial,sans-serif; letter-spacing:-.035em; text-transform:uppercase; }
+    .time-frame.changing { background:var(--yellow); }
+    .time-frame.constant { background:var(--ink); color:var(--yellow); }
+    .time-foot { font-size:13px; margin-top:16px; text-transform:uppercase; letter-spacing:.04em; }
     .ticker { background:var(--ink); color:var(--yellow); border-block:1px solid var(--ink); }
     .ticker-inner { width:min(100% - 88px,1440px); margin-inline:auto; display:flex; gap:50px; overflow-x:auto; padding:22px 0 20px; scrollbar-color:var(--yellow) var(--ink); }
     .ticker a,.ticker button { flex:none; color:var(--yellow); background:none; border:0; padding:0; text-decoration:none; cursor:pointer; font:400 43px/1 "Arial Narrow","Helvetica Neue",Arial,sans-serif; letter-spacing:-.035em; text-transform:uppercase; white-space:nowrap; }
@@ -118,11 +140,20 @@
       .nav { height:72px; }
       .nav-links { display:none; }
       .mobile-menu { display:block; }
-      .hero { grid-template-columns:1fr; padding-block:50px 48px; gap:42px; min-height:0; }
-      .hero h1 { font-size:clamp(61px,12vw,93px); margin-top:30px; }
-      .hero .sub { margin-top:24px; }
-      .hero .button { margin-top:30px; }
+      .hero { grid-template-columns:1fr; padding-block:24px 36px; min-height:0; }
+      .hero-copy { padding:35px 25px 42px; }
+      .hero h1 { font-size:clamp(46px,10.4vw,80px); margin-top:30px; }
+      .hero .slogan { font-size:17px; margin-top:28px; }
+      .hero .sub { margin-top:16px; }
+      .hero .button { margin-top:32px; }
       .hero-photo { min-height:450px; }
+      .time-machine { padding:70px 0 80px; }
+      .time-grid { grid-template-columns:1fr; }
+      .time-controls { grid-template-columns:repeat(3,1fr); grid-template-rows:none; border-right:0; border-bottom:1px solid var(--ink); }
+      .time-controls button { font-size:16px; border-bottom:0; border-right:1px solid var(--ink); padding:16px 12px; }
+      .time-controls button:last-child { border-right:0; }
+      .time-display { grid-template-columns:1fr; }
+      .time-frame { min-height:210px; }
       .ticker-inner { width:min(100% - 36px,1440px); gap:28px; }
       .ticker a,.ticker button { font-size:36px; }
       .intro { padding:75px 0; }
@@ -162,19 +193,39 @@
   </header>
   <main id="top">
     <section class="wrap hero" aria-labelledby="hero-title">
-      <div>
+      <div class="hero-copy">
         <div class="eyebrow">Кампания Ночлежки</div>
-        <h1 id="hero-title" class="display">Адрес<br>сменился.<br>Профессия<br>— нет.</h1>
-        <p class="sub">Потеря дома не стирает опыт человека. Помощь начинается с безопасного места для ночлега.</p>
+        <h1 id="hero-title"><span>Иван</span><span>Васильевич</span><span>меняет адрес</span></h1>
+        <p class="slogan">Адрес сменился. Профессия — нет.</p>
+        <p class="sub">Иван Васильевич знает, как согреть целый дом. Сейчас ему самому нужен безопасный ночлег.</p>
         <a class="button" href="https://homeless.ru/how_to_help/" target="_blank" rel="noopener">Поддержать Ночлежку</a>
       </div>
-      <a class="hero-photo" href="#stories" aria-label="Читать историю Анны Сергеевны">
-        <img src="anna-photo.jpg" alt="Иллюстративный портрет женщины-повара на кухне">
-        <span class="photo-caption"><span>Анна Сергеевна, повар</span><span>Читать историю</span></span>
+      <a class="hero-photo" href="#ivan" aria-label="Читать историю Ивана Васильевича">
+        <img src="ivan-photo.jpg" alt="Иллюстративный портрет Ивана Васильевича зимой">
+        <span class="photo-caption"><span>Иван Васильевич, инженер</span><span>Читать историю</span></span>
       </a>
     </section>
+    <section class="time-machine" aria-labelledby="time-title">
+      <div class="wrap">
+        <span class="section-index">Машина времени · переключите кадр</span>
+        <h2 id="time-title" class="display">Меняется кадр.<br>Профессия остаётся.</h2>
+        <p class="lead">Выберите момент истории Ивана Васильевича. Его профессия остаётся той же в каждом кадре.</p>
+        <div class="time-grid">
+          <div class="time-controls" aria-label="Моменты истории">
+            <button type="button" data-frame="before" aria-pressed="false">01 · Раньше</button>
+            <button type="button" data-frame="now" aria-pressed="true">02 · Сейчас</button>
+            <button type="button" data-frame="next" aria-pressed="false">03 · Следующий шаг</button>
+          </div>
+          <div class="time-display">
+            <div class="time-frame changing" aria-live="polite"><small id="frame-label">Сейчас</small><strong id="frame-copy">Ему самому нужно место, где можно пережить ночь в тепле.</strong></div>
+            <div class="time-frame constant"><small>Во всех кадрах</small><strong>Иван Васильевич · инженер-теплотехник</strong></div>
+          </div>
+        </div>
+        <p class="time-foot">Меняется адрес. Профессия и знания остаются с человеком.</p>
+      </div>
+    </section>
     <nav class="ticker" aria-label="Истории по профессиям"><div class="ticker-inner">
-      <a href="#stories">Повар</a><a href="#ivan">Инженер</a>
+      <a href="#ivan">Инженер</a><a href="#stories">Повар</a>
       <button type="button" data-profession="builder">Строитель</button>
       <button type="button" data-profession="nurse">Медсестра</button>
       <button type="button" data-profession="electrician">Электрик</button>
@@ -230,6 +281,19 @@
   </dialog>
   <footer><div class="wrap foot"><span class="brand">НОЧЛЕЖКА</span><small>Визуальный концепт кампании. Имена и изображения героев приведены для примера.</small></div></footer>
   <script>
+    const frames = {
+      before: ['Раньше', 'Работал с системами отопления и помогал сохранять тепло в домах.'],
+      now: ['Сейчас', 'Ему самому нужно место, где можно пережить ночь в тепле.'],
+      next: ['Следующий шаг', 'Безопасный ночлег и помощь с документами помогут искать путь обратно к работе.']
+    };
+    const frameButtons = document.querySelectorAll('[data-frame]');
+    frameButtons.forEach(button => button.addEventListener('click', () => {
+      const [label, copy] = frames[button.dataset.frame];
+      document.getElementById('frame-label').textContent = label;
+      document.getElementById('frame-copy').textContent = copy;
+      frameButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    }));
+
     const range = document.getElementById('split-range');
     const card = document.getElementById('split-card');
     range.addEventListener('input', () => {
