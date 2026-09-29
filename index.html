@@ -3,325 +3,278 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Иван Васильевич меняет адрес | Ночлежка</title>
-  <meta name="description" content="Истории людей, чья профессия и опыт остаются с ними после потери дома. Поддержите работу Ночлежки.">
+  <title>Иван Васильевич меняет адрес — кампания в поддержку Ночлежки</title>
+  <meta name="description" content="Потеря дома не стирает опыт человека. Узнайте истории людей разных профессий и поддержите работу Ночлежки.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f3d642'/%3E%3Cpath d='M15 12v40h8V35h18v17h8V12h-8v16H23V12z' fill='%2317191a'/%3E%3C/svg%3E">
   <style>
-    @font-face { font-family:"Neucha"; src:url("Neucha.ttf") format("truetype"); font-display:swap; }
-    :root { --yellow:#f3d642; --ink:#17191a; --paper:#f7eed2; }
+    @font-face { font-family:Neucha; src:url('Neucha.ttf') format('truetype'); font-display:swap; }
+    :root { --yellow:#f3d642; --ink:#191919; --cream:#f8f4e8; --line:#292929; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; }
-    body { margin:0; color:var(--ink); background:var(--yellow); font-family:"Helvetica Neue",Arial,sans-serif; }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; }
+    h1,h2,h3,p,figure { margin:0; }
+    button,a { -webkit-tap-highlight-color:transparent; }
     a { color:inherit; }
-    .display { font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif; font-stretch:condensed; font-weight:400; }
-    .wrap { width:min(100% - 88px,1440px); margin-inline:auto; }
-    .nav { height:88px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--ink); }
-    .brand { text-decoration:none; font-family:"Arial Narrow",Arial,sans-serif; font-size:33px; letter-spacing:-1.5px; }
-    .nav-links { display:flex; align-items:center; gap:38px; font-size:13px; text-transform:uppercase; letter-spacing:.06em; }
-    .nav-links a { text-decoration:none; }
-    .nav-links a:hover { text-decoration:underline; text-underline-offset:5px; }
-    .nav-links .nav-help { border:1px solid var(--ink); padding:12px 18px; }
-    .mobile-menu { display:none; position:relative; font-size:14px; text-transform:uppercase; }
-    .mobile-menu summary { cursor:pointer; list-style:none; border:1px solid var(--ink); padding:10px 14px; }
-    .mobile-menu summary::-webkit-details-marker { display:none; }
-    .mobile-menu nav { position:absolute; z-index:20; right:0; top:45px; min-width:190px; background:var(--yellow); border:1px solid var(--ink); display:grid; }
-    .mobile-menu nav a { padding:15px; text-decoration:none; border-bottom:1px solid var(--ink); }
-    .mobile-menu nav a:last-child { border-bottom:0; }
-    .hero { display:grid; grid-template-columns:1.07fr .93fr; gap:0; padding-block:62px 74px; min-height:690px; align-items:stretch; }
-    .hero-copy { background:var(--ink); color:var(--yellow); padding:48px clamp(30px,4vw,65px) 48px; display:flex; flex-direction:column; align-items:flex-start; }
-    .eyebrow { font-size:13px; letter-spacing:.12em; text-transform:uppercase; }
-    h1,h2,h3,p { margin:0; }
-    .hero h1 { margin-top:45px; font-family:"Neucha","Arial Narrow",Arial,sans-serif; font-size:clamp(62px,5.7vw,94px); line-height:.9; letter-spacing:-.02em; text-transform:uppercase; max-width:770px; }
-    .hero h1 span { display:block; }
-    .hero h1 span:nth-child(2) { padding-left:.3em; }
-    .hero h1 span:nth-child(3) { font-size:.72em; padding-left:.06em; margin-top:.12em; }
-    .hero .slogan { font-size:20px; line-height:1.2; text-transform:uppercase; margin-top:34px; padding-top:20px; border-top:1px solid currentColor; max-width:500px; }
-    .hero .sub { font-size:17px; line-height:1.38; max-width:480px; margin-top:17px; }
-    .button { display:inline-flex; align-items:center; justify-content:center; min-width:285px; padding:18px 22px; background:var(--ink); color:var(--yellow); font-size:15px; font-weight:600; text-decoration:none; text-transform:uppercase; letter-spacing:.04em; transition:transform .2s ease; }
-    .button:hover { transform:translateY(-3px); }
-    a:focus-visible,summary:focus-visible { outline:3px solid currentColor; outline-offset:4px; }
-    .hero .button { margin-top:auto; background:var(--yellow); color:var(--ink); border:1px solid var(--yellow); }
-    .hero-photo { min-height:570px; position:relative; overflow:hidden; display:block; text-decoration:none; }
-    .hero-photo img { width:100%; height:100%; position:absolute; inset:0; object-fit:cover; object-position:66% center; }
-    .photo-caption { position:absolute; bottom:0; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:18px 20px; background:var(--yellow); font-size:13px; text-transform:uppercase; letter-spacing:.04em; }
-    .photo-caption span:last-child { text-decoration:underline; text-underline-offset:4px; }
-    .time-machine { background:var(--paper); padding:95px 0 105px; }
-    .time-machine h2 { font-size:clamp(57px,5vw,79px); line-height:.92; letter-spacing:-.052em; text-transform:uppercase; max-width:900px; }
-    .time-machine .lead { font-size:20px; line-height:1.35; margin-top:20px; max-width:700px; }
-    .time-grid { display:grid; grid-template-columns:240px 1fr; border:1px solid var(--ink); margin-top:52px; min-height:300px; }
-    .time-controls { display:grid; grid-template-rows:repeat(3,1fr); border-right:1px solid var(--ink); }
-    .time-controls button { text-align:left; border:0; border-bottom:1px solid var(--ink); background:transparent; color:var(--ink); padding:18px 23px; font:400 23px/1.1 "Arial Narrow",Arial,sans-serif; text-transform:uppercase; cursor:pointer; }
-    .time-controls button:last-child { border-bottom:0; }
-    .time-controls button[aria-pressed="true"] { background:var(--yellow); font-weight:700; }
-    .time-controls button:focus-visible { outline:3px solid var(--ink); outline-offset:-5px; }
-    .time-display { display:grid; grid-template-columns:1fr 1fr; }
-    .time-frame { padding:34px clamp(25px,3vw,50px); display:flex; flex-direction:column; justify-content:space-between; }
-    .time-frame small { font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
-    .time-frame strong { font:400 clamp(32px,3.3vw,50px)/1.01 "Arial Narrow",Arial,sans-serif; letter-spacing:-.035em; text-transform:uppercase; }
-    .time-frame.changing { background:var(--yellow); }
-    .time-frame.constant { background:var(--ink); color:var(--yellow); }
-    .time-foot { font-size:13px; margin-top:16px; text-transform:uppercase; letter-spacing:.04em; }
-    .ticker { background:var(--ink); color:var(--yellow); border-block:1px solid var(--ink); }
-    .ticker-inner { width:min(100% - 88px,1440px); margin-inline:auto; display:flex; gap:50px; overflow-x:auto; padding:22px 0 20px; scrollbar-color:var(--yellow) var(--ink); }
-    .ticker a,.ticker button { flex:none; color:var(--yellow); background:none; border:0; padding:0; text-decoration:none; cursor:pointer; font:400 43px/1 "Arial Narrow","Helvetica Neue",Arial,sans-serif; letter-spacing:-.035em; text-transform:uppercase; white-space:nowrap; }
-    .ticker a:hover,.ticker button:hover { text-decoration:underline; text-underline-offset:7px; }
-    .ticker a:focus-visible,.ticker button:focus-visible { outline:2px solid var(--yellow); outline-offset:5px; }
-    .intro { background:var(--paper); padding:115px 0 130px; }
-    .intro-grid { display:grid; grid-template-columns:1fr .78fr; gap:13%; }
-    .section-index { font-size:13px; text-transform:uppercase; letter-spacing:.1em; margin-bottom:45px; display:block; }
-    .intro h2 { font-size:clamp(60px,5.6vw,86px); line-height:.93; letter-spacing:-.055em; text-transform:uppercase; max-width:800px; }
-    .intro p { font-size:25px; line-height:1.35; max-width:500px; margin-top:105px; }
-    .intro small { display:block; margin-top:42px; max-width:480px; font-size:15px; line-height:1.45; }
-    .story { padding:100px 0 135px; }
-    .story-top { display:flex; justify-content:space-between; border-top:1px solid var(--ink); padding-top:19px; font-size:13px; text-transform:uppercase; letter-spacing:.06em; }
-    .story-grid { display:grid; grid-template-columns:1fr 1fr; gap:7%; margin-top:87px; }
-    .story h2 { font-size:clamp(93px,10vw,160px); letter-spacing:-.068em; line-height:.83; text-transform:uppercase; }
-    .story .name { font-size:26px; margin-top:30px; }
-    .interaction-instruction { font-size:15px; line-height:1.4; margin-bottom:18px; }
-    .split-card { --split:50%; position:relative; display:grid; grid-template-columns:var(--split) minmax(0,1fr); min-height:405px; border:1px solid var(--ink); overflow:hidden; }
-    .split-pane { min-width:0; padding:30px 24px 38px; display:flex; flex-direction:column; gap:40px; }
-    .split-pane.skill { background:var(--paper); color:var(--ink); }
-    .split-pane.need { background:var(--ink); color:var(--yellow); }
-    .split-pane small { font-size:13px; text-transform:uppercase; letter-spacing:.08em; }
-    .split-pane strong { font:400 clamp(31px,3.1vw,48px)/.98 "Arial Narrow","Helvetica Neue",Arial,sans-serif; letter-spacing:-.035em; text-transform:uppercase; overflow-wrap:normal; hyphens:auto; }
-    .split-divider { position:absolute; left:var(--split); top:0; bottom:0; width:2px; background:var(--yellow); transform:translateX(-50%); pointer-events:none; z-index:1; }
-    .split-divider::after { content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:24px; height:42px; border:2px solid var(--ink); background:var(--yellow); box-shadow:inset 6px 0 0 var(--yellow),inset 8px 0 0 var(--ink),inset -6px 0 0 var(--yellow),inset -8px 0 0 var(--ink); }
-    .split-range { position:absolute; z-index:2; left:0; top:calc(50% - 32px); width:100%; height:64px; margin:0; opacity:0; cursor:ew-resize; }
-    .split-card:focus-within { outline:3px solid var(--ink); outline-offset:5px; }
-    .split-caption { font-size:15px; line-height:1.35; margin-top:19px; }
-    .story-actions { display:flex; flex-wrap:wrap; align-items:center; gap:22px; margin-top:33px; }
-    .story-actions .button,.story-actions .text-link { margin:0; }
-    .text-link { display:inline-block; margin-top:45px; font-size:15px; text-transform:uppercase; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:5px; }
-    .text-link:hover { opacity:.62; }
-    .profile-mark { margin-top:96px; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); padding:23px 0; display:grid; grid-template-columns:1fr 1fr; font-family:"Arial Narrow",Arial,sans-serif; font-size:36px; text-transform:uppercase; letter-spacing:-.025em; }
-    .profile-mark .crossed { text-decoration:line-through; text-decoration-thickness:2px; opacity:.44; }
-    .ivan { background:var(--ink); color:var(--yellow); }
-    .ivan-grid { display:grid; grid-template-columns:.9fr 1.1fr; min-height:760px; }
-    .ivan-image { min-height:760px; overflow:hidden; }
-    .ivan-image img { width:100%; height:100%; object-fit:cover; object-position:65% center; filter:grayscale(100%); }
-    .ivan-copy { padding:72px min(7vw,110px) 80px; display:flex; flex-direction:column; align-items:flex-start; }
-    .ivan-copy .eyebrow { margin-bottom:56px; }
-    .ivan-copy h2 { font-size:clamp(65px,5.7vw,92px); line-height:.9; text-transform:uppercase; letter-spacing:-.055em; }
-    .ivan-copy .role { margin-top:20px; font-size:19px; text-transform:uppercase; }
-    .ivan-copy .line { margin-top:auto; font-size:clamp(31px,3.15vw,51px); line-height:1.03; letter-spacing:-.03em; text-transform:uppercase; }
-    .ivan-copy .tiny { margin-top:40px; border-top:1px solid rgba(243,214,66,.5); padding-top:17px; font-size:15px; line-height:1.4; max-width:420px; }
-    .help { background:var(--paper); padding:115px 0 135px; }
-    .help h2 { font-size:clamp(65px,7vw,112px); line-height:.9; letter-spacing:-.055em; max-width:980px; text-transform:uppercase; }
-    .help-row { margin-top:90px; display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--ink); }
-    .help-step { border-right:1px solid var(--ink); padding:26px 36px 0 0; min-height:285px; }
-    .help-step + .help-step { padding-left:36px; }
-    .help-step:last-child { border-right:0; }
-    .help-step summary { cursor:pointer; list-style:none; min-height:225px; }
-    .help-step summary::-webkit-details-marker { display:none; }
-    .help-step .num { font-size:16px; margin-bottom:35px; display:flex; justify-content:space-between; }
-    .help-step .plus { font-size:28px; line-height:.7; transition:transform .2s ease; }
-    .help-step[open] .plus { transform:rotate(45deg); }
-    .help-step h3 { font-size:45px; line-height:1; text-transform:uppercase; letter-spacing:-.03em; }
-    .help-step p { font-size:17px; line-height:1.4; margin-top:24px; max-width:320px; }
-    .help-step .expanded { border-top:1px solid var(--ink); padding:16px 0 30px; margin-top:0; }
-    .profile-dialog { width:min(640px,calc(100% - 32px)); max-height:calc(100% - 32px); background:var(--yellow); color:var(--ink); border:2px solid var(--ink); padding:34px; }
-    .profile-dialog::backdrop { background:rgba(10,10,10,.76); }
-    .dialog-top { display:flex; justify-content:space-between; gap:20px; align-items:start; font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
-    .dialog-close { background:none; border:1px solid var(--ink); color:var(--ink); padding:9px 13px; font:inherit; cursor:pointer; }
-    .profile-dialog h2 { font-size:clamp(54px,7vw,88px); line-height:.9; letter-spacing:-.055em; text-transform:uppercase; margin-top:65px; }
-    .dialog-role { font-size:23px; text-transform:uppercase; margin-top:12px; }
-    .dialog-copy { font-size:clamp(28px,3.4vw,44px); line-height:1.04; text-transform:uppercase; margin:55px 0 38px; }
-    .call { background:var(--ink); color:var(--yellow); padding:100px 0 105px; }
-    .call-inner { display:grid; grid-template-columns:1fr auto; gap:50px; align-items:end; }
-    .call h2 { font-size:clamp(78px,9vw,145px); line-height:.87; letter-spacing:-.06em; max-width:1050px; text-transform:uppercase; }
-    .call .button { background:var(--yellow); color:var(--ink); margin-bottom:8px; }
-    .call p { font-size:16px; line-height:1.4; max-width:490px; margin-top:45px; }
-    footer { background:var(--ink); color:var(--yellow); border-top:1px solid rgba(243,214,66,.45); }
-    .foot { padding:30px 0 38px; display:flex; justify-content:space-between; align-items:end; }
-    .foot .brand { font-size:38px; }
-    .foot small { font-size:12px; opacity:.72; }
-    @media (max-width:900px) {
-      .wrap { width:min(100% - 36px,1440px); }
-      .nav { height:72px; }
-      .nav-links { display:none; }
-      .mobile-menu { display:block; }
-      .hero { grid-template-columns:1fr; padding-block:24px 36px; min-height:0; }
-      .hero-copy { padding:35px 25px 42px; }
-      .hero h1 { font-size:clamp(46px,10.4vw,80px); margin-top:30px; }
-      .hero .slogan { font-size:17px; margin-top:28px; }
-      .hero .sub { margin-top:16px; }
-      .hero .button { margin-top:32px; }
-      .hero-photo { min-height:450px; }
-      .time-machine { padding:70px 0 80px; }
-      .time-grid { grid-template-columns:1fr; }
-      .time-controls { grid-template-columns:repeat(3,1fr); grid-template-rows:none; border-right:0; border-bottom:1px solid var(--ink); }
-      .time-controls button { font-size:16px; border-bottom:0; border-right:1px solid var(--ink); padding:16px 12px; }
-      .time-controls button:last-child { border-right:0; }
-      .time-display { grid-template-columns:1fr; }
-      .time-frame { min-height:210px; }
-      .ticker-inner { width:min(100% - 36px,1440px); gap:28px; }
-      .ticker a,.ticker button { font-size:36px; }
-      .intro { padding:75px 0; }
-      .intro-grid,.story-grid,.ivan-grid,.call-inner { grid-template-columns:1fr; }
-      .intro p { margin-top:50px; }
-      .story { padding:70px 0 80px; }
-      .story-grid { margin-top:55px; gap:50px; }
-      .story h2 { font-size:clamp(90px,19vw,150px); }
-      .profile-mark { margin-top:55px; font-size:24px; }
-      .split-card { min-height:350px; }
-      .split-pane { padding:22px 14px 28px; gap:35px; }
-      .split-pane strong { font-size:clamp(20px,5vw,38px); overflow-wrap:break-word; }
-      .story-actions .button { width:100%; }
-      .ivan-image { min-height:500px; max-height:650px; }
-      .ivan-copy { min-height:600px; padding:55px 18px 65px; }
-      .ivan-copy .line { margin-top:70px; }
-      .help { padding:75px 0; }
-      .help-row { grid-template-columns:1fr; margin-top:60px; }
-      .help-step,.help-step + .help-step { border-right:0; border-bottom:1px solid var(--ink); min-height:0; padding:24px 0 20px; }
-      .help-step .num { margin-bottom:25px; }
-      .help-step summary { min-height:190px; }
-      .call { padding:75px 0; }
-      .call h2 { font-size:clamp(70px,13vw,115px); }
-      .call .button { justify-self:start; margin-top:30px; }
-      .foot { align-items:flex-start; gap:25px; flex-direction:column; }
+    a:focus-visible,button:focus-visible { outline:3px solid currentColor; outline-offset:4px; }
+    .container { width:min(calc(100% - 64px),1180px); margin-inline:auto; }
+    .eyebrow { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    .header { background:var(--yellow); border-bottom:1px solid var(--ink); }
+    .header-inner { min-height:76px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { text-decoration:none; font-size:29px; line-height:1; letter-spacing:-.075em; font-weight:700; }
+    .nav { display:flex; align-items:center; gap:28px; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.03em; }
+    .nav a { text-decoration:none; }
+    .nav a:hover { text-decoration:underline; text-underline-offset:5px; }
+    .nav .nav-donate { padding:11px 17px; border:1px solid var(--ink); }
+    .hero { background:var(--yellow); padding:54px 0 66px; }
+    .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:52px; align-items:stretch; }
+    .hero-copy { display:flex; flex-direction:column; align-items:flex-start; padding:5px 0 14px; }
+    .campaign-title { font-family:Neucha,'Arial Narrow',Arial,sans-serif; font-size:clamp(26px,2.4vw,33px); line-height:1; }
+    .hero-rule { width:85px; border-top:2px solid var(--ink); margin:35px 0 26px; }
+    .hero h1 { max-width:650px; margin-top:24px; font-size:clamp(54px,5.5vw,78px); line-height:.98; letter-spacing:-.065em; font-weight:700; text-wrap:balance; }
+    .hero-lead { max-width:530px; margin-top:30px; font-size:21px; line-height:1.4; }
+    .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:25px; margin-top:auto; padding-top:38px; }
+    .button { display:inline-flex; justify-content:center; align-items:center; min-height:52px; padding:14px 22px; background:var(--ink); color:var(--yellow); text-decoration:none; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:.035em; transition:transform .18s ease; }
+    .button:hover { transform:translateY(-2px); }
+    .quiet-link { font-size:14px; font-weight:700; text-decoration:underline; text-underline-offset:5px; }
+    .photo-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; min-height:535px; }
+    .photo-card { display:grid; grid-template-rows:1fr auto; min-width:0; background:var(--ink); color:var(--yellow); }
+    .photo-card img { display:block; width:100%; height:100%; min-height:0; object-fit:cover; }
+    .photo-card:first-child img { object-position:55% center; }
+    .photo-card:nth-child(2) img { object-position:72% center; }
+    .photo-card figcaption { display:flex; flex-direction:column; gap:4px; min-height:70px; padding:13px 15px 14px; font-size:14px; line-height:1.15; }
+    .photo-card figcaption strong { font-size:17px; }
+    .thesis { background:var(--ink); color:var(--yellow); padding:45px 0; }
+    .thesis-inner { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:60px; }
+    .thesis strong { font-size:clamp(29px,3vw,44px); line-height:1.04; letter-spacing:-.045em; }
+    .thesis p { max-width:500px; font-size:18px; line-height:1.45; }
+    .section { padding:105px 0 115px; }
+    .section-head { display:grid; grid-template-columns:1.25fr .75fr; gap:80px; align-items:end; margin-bottom:43px; }
+    .section h2 { margin-top:17px; font-size:clamp(41px,4.2vw,60px); line-height:1.03; letter-spacing:-.057em; text-wrap:balance; }
+    .section-head p { max-width:410px; font-size:17px; line-height:1.45; }
+    .stories { background:var(--cream); }
+    .frame-tabs { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:10px; }
+    .frame-tabs button { min-height:65px; border:1px solid var(--ink); background:transparent; text-align:left; padding:12px 16px; font-family:inherit; font-size:14px; font-weight:700; line-height:1.2; cursor:pointer; }
+    .frame-tabs button span { display:block; margin-bottom:4px; font-size:11px; font-weight:400; letter-spacing:.1em; }
+    .frame-tabs button[aria-pressed="true"] { background:var(--yellow); }
+    .frame-tabs button:hover { background:#f2e7ad; }
+    .frame-tabs button[aria-pressed="true"]:hover { background:var(--yellow); }
+    .profile { border:1px solid var(--ink); background:#fffdf4; }
+    .profile-top { display:flex; justify-content:space-between; gap:20px; padding:15px 22px; border-bottom:1px solid var(--ink); font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.1em; }
+    .profile-person { display:flex; align-items:baseline; flex-wrap:wrap; column-gap:22px; row-gap:7px; padding:25px 30px; border-bottom:1px solid var(--ink); }
+    .profile h3 { font-size:clamp(34px,3.5vw,49px); line-height:1.04; letter-spacing:-.05em; }
+    .profile-role { font-size:18px; }
+    .split-instruction { display:flex; justify-content:space-between; gap:20px; padding:16px 30px; font-size:14px; line-height:1.35; }
+    .split-instruction strong { font-weight:700; }
+    .split-stage { --split:50%; position:relative; display:flex; min-height:340px; overflow:hidden; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); }
+    .split-side { display:flex; flex-direction:column; gap:52px; padding:30px; min-width:0; }
+    .split-left { width:var(--split); background:#f8efd0; color:var(--ink); }
+    .split-right { width:calc(100% - var(--split)); background:var(--ink); color:var(--yellow); }
+    .split-label { font-size:13px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+    .split-detail { max-width:520px; font-size:clamp(25px,3vw,42px); line-height:1.12; letter-spacing:-.045em; font-weight:700; overflow-wrap:break-word; }
+    .split-line { position:absolute; z-index:1; top:0; bottom:0; left:var(--split); width:3px; transform:translateX(-50%); background:var(--yellow); pointer-events:none; }
+    .split-range { position:absolute; z-index:2; left:calc(32% - 26px); top:50%; width:calc(36% + 52px); height:66px; transform:translateY(-50%); margin:0; appearance:none; -webkit-appearance:none; background:transparent; cursor:ew-resize; }
+    .split-range::-webkit-slider-runnable-track { height:1px; background:transparent; }
+    .split-range::-moz-range-track { height:1px; background:transparent; }
+    .split-range::-webkit-slider-thumb { width:52px; height:66px; margin-top:-32px; appearance:none; -webkit-appearance:none; border:2px solid var(--ink); background:repeating-linear-gradient(90deg,var(--yellow) 0 11px,var(--ink) 11px 14px,var(--yellow) 14px 17px); box-shadow:0 3px 0 rgba(0,0,0,.2); }
+    .split-range::-moz-range-thumb { width:48px; height:62px; border:2px solid var(--ink); border-radius:0; background:repeating-linear-gradient(90deg,var(--yellow) 0 11px,var(--ink) 11px 14px,var(--yellow) 14px 17px); box-shadow:0 3px 0 rgba(0,0,0,.2); }
+    .split-range:focus-visible { outline:3px solid var(--yellow); outline-offset:5px; }
+    .help { background:var(--yellow); }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--ink); margin-top:55px; }
+    .step { padding:22px 36px 5px 0; border-right:1px solid var(--ink); min-height:245px; }
+    .step + .step { padding-left:36px; }
+    .step:last-child { border-right:0; }
+    .step-num { display:block; font-size:13px; font-weight:700; margin-bottom:50px; }
+    .step h3 { font-size:31px; letter-spacing:-.04em; line-height:1.05; }
+    .step p { margin-top:17px; max-width:295px; font-size:16px; line-height:1.4; }
+    .end { background:var(--ink); color:var(--yellow); padding:90px 0 100px; }
+    .end-inner { display:grid; grid-template-columns:1fr auto; gap:50px; align-items:end; }
+    .end h2 { max-width:780px; font-size:clamp(48px,5.4vw,78px); line-height:1.02; letter-spacing:-.06em; }
+    .end p { max-width:620px; margin-top:23px; font-size:18px; line-height:1.42; }
+    .end .button { background:var(--yellow); color:var(--ink); white-space:nowrap; }
+    .footer { background:var(--ink); color:var(--yellow); border-top:1px solid rgba(243,214,66,.42); }
+    .footer-inner { display:flex; justify-content:space-between; gap:30px; align-items:center; padding:28px 0; }
+    .footer small { max-width:600px; font-size:12px; line-height:1.4; }
+    @media(max-width:900px) {
+      .container { width:min(calc(100% - 36px),1180px); }
+      .hero-grid,.thesis-inner,.section-head,.end-inner { grid-template-columns:1fr; }
+      .hero-grid { gap:40px; }
+      .hero h1 { font-size:clamp(48px,8vw,68px); }
+      .hero-actions { margin-top:0; }
+      .photo-grid { min-height:420px; }
+      .thesis-inner,.section-head { gap:22px; }
+      .end .button { justify-self:start; }
     }
-    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
+    @media(max-width:600px) {
+      .header-inner { min-height:64px; }
+      .brand { font-size:24px; }
+      .nav { gap:0; }
+      .nav a:not(.nav-donate) { display:none; }
+      .nav .nav-donate { font-size:12px; padding:9px 12px; }
+      .hero { padding:38px 0 46px; }
+      .campaign-title { font-size:27px; }
+      .hero-rule { margin:26px 0 22px; }
+      .hero h1 { margin-top:16px; font-size:clamp(42px,11vw,59px); }
+      .hero-lead { margin-top:22px; font-size:17px; }
+      .hero-actions { gap:20px; padding-top:25px; }
+      .photo-grid { min-height:280px; gap:6px; }
+      .photo-card figcaption { min-height:70px; padding:10px 8px; font-size:11px; }
+      .photo-card figcaption strong { font-size:13px; }
+      .thesis { padding:36px 0; }
+      .thesis strong { font-size:34px; }
+      .thesis p { font-size:16px; }
+      .section { padding:72px 0 80px; }
+      .section h2 { font-size:clamp(36px,9.5vw,47px); }
+      .section-head { margin-bottom:29px; }
+      .section-head p { font-size:16px; }
+      .frame-tabs { grid-template-columns:repeat(2,1fr); gap:6px; }
+      .frame-tabs button { min-height:58px; font-size:13px; }
+      .profile-top { padding:12px 14px; font-size:10px; }
+      .profile-person { display:block; padding:20px; }
+      .profile-role { margin-top:7px; }
+      .profile h3 { font-size:37px; }
+      .split-instruction { display:block; padding:14px 20px; font-size:13px; }
+      .split-instruction span { display:block; margin-top:4px; }
+      .split-stage { min-height:320px; }
+      .split-side { gap:43px; padding:24px 12px; }
+      .split-left { padding-right:28px; }
+      .split-right { padding-left:28px; }
+      .split-label { font-size:10px; letter-spacing:.05em; }
+      .split-detail { font-size:clamp(18px,5vw,22px); line-height:1.14; letter-spacing:-.04em; }
+      .split-range { left:calc(38% - 22px); width:calc(24% + 44px); height:60px; }
+      .split-range::-webkit-slider-thumb { width:44px; height:60px; margin-top:-29px; }
+      .split-range::-moz-range-thumb { width:40px; height:56px; }
+      .steps { grid-template-columns:1fr; margin-top:37px; }
+      .step,.step + .step { min-height:0; border-right:0; border-bottom:1px solid var(--ink); padding:23px 0 26px; }
+      .step:last-child { border-bottom:0; }
+      .step-num { margin-bottom:24px; }
+      .end { padding:70px 0 80px; }
+      .end h2 { font-size:48px; }
+      .end p { font-size:16px; }
+      .end .button { white-space:normal; }
+      .footer-inner { display:block; }
+      .footer small { display:block; margin-top:15px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .button { transition:none; } }
   </style>
 </head>
 <body>
-  <header class="wrap nav">
-    <a class="brand" href="#top" aria-label="Ночлежка, наверх">НОЧЛЕЖКА</a>
-    <nav class="nav-links" aria-label="Навигация">
-      <a href="#stories">Истории</a><a href="#help">Как помогает</a><a class="nav-help" href="https://homeless.ru/how_to_help/" target="_blank" rel="noopener">Помочь</a>
-    </nav>
-    <details class="mobile-menu"><summary>Меню</summary><nav aria-label="Мобильная навигация"><a href="#stories">Истории</a><a href="#help">Как помогает</a><a href="https://homeless.ru/how_to_help/" target="_blank" rel="noopener">Помочь</a></nav></details>
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Ночлежка, наверх">НОЧЛЕЖКА</a>
+      <nav class="nav" aria-label="Навигация">
+        <a href="#stories">Истории</a>
+        <a href="#help">Как помогает</a>
+        <a class="nav-donate" href="https://homeless.ru/how_to_help/" target="_blank" rel="noopener">Помочь</a>
+      </nav>
+    </div>
   </header>
-  <main id="top">
-    <section class="wrap hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <div class="eyebrow">Кампания Ночлежки</div>
-        <h1 id="hero-title"><span>Иван</span><span>Васильевич</span><span>меняет адрес</span></h1>
-        <p class="slogan">Адрес сменился. Профессия — нет.</p>
-        <p class="sub">Иван Васильевич знает, как согреть целый дом. Сейчас ему самому нужен безопасный ночлег.</p>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="campaign-title">Иван Васильевич меняет адрес</p>
+          <div class="hero-rule" aria-hidden="true"></div>
+          <span class="eyebrow">Кампания в поддержку Ночлежки</span>
+          <h1 id="hero-title">Адрес сменился.<br>Профессия — нет.</h1>
+          <p class="hero-lead">Потеря дома не стирает знания и опыт человека. За каждой профессией здесь — чья-то история.</p>
+          <div class="hero-actions">
+            <a class="button" href="https://homeless.ru/how_to_help/" target="_blank" rel="noopener">Поддержать Ночлежку</a>
+            <a class="quiet-link" href="#stories">Смотреть истории ↓</a>
+          </div>
+        </div>
+        <div class="photo-grid" aria-label="Герои кампании">
+          <figure class="photo-card"><img src="anna-photo.jpg" alt="Иллюстративный портрет женщины-повара" loading="eager"><figcaption><strong>Анна Сергеевна</strong><span>Повар</span></figcaption></figure>
+          <figure class="photo-card"><img src="ivan-photo.jpg" alt="Иллюстративный портрет мужчины зимой" loading="eager"><figcaption><strong>Иван Васильевич</strong><span>Инженер-теплотехник</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <section class="thesis" aria-label="Главная мысль кампании">
+      <div class="container thesis-inner">
+        <strong>Человек — больше, чем его нынешний адрес.</strong>
+        <p>Когда мы узнаём, что кто-то остался без дома, нам легко перестать видеть его профессию, умения и годы работы. Они никуда не исчезают.</p>
+      </div>
+    </section>
+    <section class="section stories" id="stories" aria-labelledby="stories-title">
+      <div class="container">
+        <div class="section-head">
+          <div><span class="eyebrow">Смена кадра</span><h2 id="stories-title">Истории людей разных профессий</h2></div>
+          <p>Выберите визитку и передвиньте жёлтую ручку. Обстоятельства меняются — опыт остаётся с человеком.</p>
+        </div>
+        <div class="frame-tabs" role="group" aria-label="Выбрать профессиональную визитку">
+          <button type="button" data-person="anna" aria-pressed="true"><span>01 / 04</span>Повар</button>
+          <button type="button" data-person="ivan" aria-pressed="false"><span>02 / 04</span>Инженер</button>
+          <button type="button" data-person="olga" aria-pressed="false"><span>03 / 04</span>Медсестра</button>
+          <button type="button" data-person="mikhail" aria-pressed="false"><span>04 / 04</span>Водитель</button>
+        </div>
+        <article class="profile" aria-live="polite" aria-label="Профессиональная визитка">
+          <div class="profile-top"><span id="profile-count">01 / 04</span><span>Профессиональная визитка</span></div>
+          <div class="profile-person"><h3 id="profile-name">Анна Сергеевна</h3><p class="profile-role" id="profile-role">Повар</p></div>
+          <p class="split-instruction"><strong>Передвиньте линию</strong><span>Адрес может измениться. Профессия остаётся.</span></p>
+          <div class="split-stage" id="split-stage">
+            <div class="split-side split-left"><span class="split-label">Умеет</span><p class="split-detail" id="profile-skill">Готовила обеды на сто человек.</p></div>
+            <div class="split-side split-right"><span class="split-label">Нужно сейчас</span><p class="split-detail" id="profile-need">Безопасное место для ночлега.</p></div>
+            <span class="split-line" aria-hidden="true"></span>
+            <input class="split-range" id="split-range" type="range" min="32" max="68" value="50" aria-label="Передвинуть линию между опытом человека и тем, что ему нужно сейчас">
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="section help" id="help" aria-labelledby="help-title">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Как работает помощь</span><h2 id="help-title">Вернуться к привычной жизни помогает опора</h2></div><p>Первый шаг — безопасное место. После него легче решать вопросы, которые невозможно отложить.</p></div>
+        <div class="steps">
+          <div class="step"><span class="step-num">01</span><h3>Ночлег</h3><p>Место, где можно провести ночь в тепле и безопасности.</p></div>
+          <div class="step"><span class="step-num">02</span><h3>Документы</h3><p>Поддержка в восстановлении документов и решении срочных вопросов.</p></div>
+          <div class="step"><span class="step-num">03</span><h3>Следующие шаги</h3><p>Когда появляется опора, становится легче думать о работе и будущем.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="end" aria-labelledby="end-title">
+      <div class="container end-inner">
+        <div><h2 id="end-title">Помогите человеку пережить ночь</h2><p>Пожертвование поддерживает работу Ночлежки и помощь людям, которые остались без дома.</p></div>
         <a class="button" href="https://homeless.ru/how_to_help/" target="_blank" rel="noopener">Поддержать Ночлежку</a>
       </div>
-      <a class="hero-photo" href="#ivan" aria-label="Читать историю Ивана Васильевича">
-        <img src="ivan-photo.jpg" alt="Иллюстративный портрет Ивана Васильевича зимой">
-        <span class="photo-caption"><span>Иван Васильевич, инженер</span><span>Читать историю</span></span>
-      </a>
     </section>
-    <section class="time-machine" aria-labelledby="time-title">
-      <div class="wrap">
-        <span class="section-index">Машина времени · переключите кадр</span>
-        <h2 id="time-title" class="display">Меняется кадр.<br>Профессия остаётся.</h2>
-        <p class="lead">Выберите момент истории Ивана Васильевича. Его профессия остаётся той же в каждом кадре.</p>
-        <div class="time-grid">
-          <div class="time-controls" aria-label="Моменты истории">
-            <button type="button" data-frame="before" aria-pressed="false">01 · Раньше</button>
-            <button type="button" data-frame="now" aria-pressed="true">02 · Сейчас</button>
-            <button type="button" data-frame="next" aria-pressed="false">03 · Следующий шаг</button>
-          </div>
-          <div class="time-display">
-            <div class="time-frame changing" aria-live="polite"><small id="frame-label">Сейчас</small><strong id="frame-copy">Ему самому нужно место, где можно пережить ночь в тепле.</strong></div>
-            <div class="time-frame constant"><small>Во всех кадрах</small><strong>Иван Васильевич · инженер-теплотехник</strong></div>
-          </div>
-        </div>
-        <p class="time-foot">Меняется адрес. Профессия и знания остаются с человеком.</p>
-      </div>
-    </section>
-    <nav class="ticker" aria-label="Истории по профессиям"><div class="ticker-inner">
-      <a href="#ivan">Инженер</a><a href="#stories">Повар</a>
-      <button type="button" data-profession="builder">Строитель</button>
-      <button type="button" data-profession="nurse">Медсестра</button>
-      <button type="button" data-profession="electrician">Электрик</button>
-      <button type="button" data-profession="seamstress">Швея</button>
-      <button type="button" data-profession="driver">Водитель</button>
-      <button type="button" data-profession="teacher">Учительница</button>
-      <button type="button" data-profession="locksmith">Слесарь</button>
-    </div></nav>
-    <section class="intro" aria-labelledby="intro-title">
-      <div class="wrap intro-grid">
-        <div><span class="section-index">Почему эта кампания</span><h2 id="intro-title" class="display">За словом<br>«бездомный»<br>всегда есть<br>человек</h2></div>
-        <div><p>У него остаются знания, любимое дело и имя. Мы показываем, кем люди были и кем остаются, даже когда им нужна помощь.</p><small>Профессиональные визитки на улицах города ведут на истории людей и страницу поддержки Ночлежки.</small></div>
-      </div>
-    </section>
-    <section class="story wrap" id="stories" aria-labelledby="anna-title">
-      <div class="story-top"><span>История 01</span><span>Профессиональная визитка</span></div>
-      <div class="story-grid">
-        <div><h2 id="anna-title" class="display">Повар</h2><p class="name">Анна Сергеевна</p><div class="profile-mark"><span class="crossed">Адрес</span><span>Профессия</span></div></div>
-        <div>
-          <p class="interaction-instruction">Передвиньте линию: обстоятельства меняются, профессия остаётся.</p>
-          <div class="split-card" id="split-card">
-            <div class="split-pane skill"><small>Умеет</small><strong>Готовила обеды на сто человек</strong></div>
-            <div class="split-pane need"><small>Нужно сейчас</small><strong>Безопасный ночлег</strong></div>
-            <span class="split-divider" aria-hidden="true"></span>
-            <input class="split-range" id="split-range" type="range" min="30" max="70" value="50" aria-label="Соотношение опыта и текущей потребности Анны Сергеевны">
-          </div>
-          <p class="split-caption">Адрес сменился. Профессия — нет.</p>
-          <div class="story-actions"><a class="button" href="https://homeless.ru/how_to_help/" target="_blank" rel="noopener">Поддержать Ночлежку</a><a class="text-link" href="#ivan">История Ивана Васильевича</a></div>
-        </div>
-      </div>
-    </section>
-    <section class="ivan" id="ivan" aria-labelledby="ivan-title">
-      <div class="ivan-grid">
-        <div class="ivan-image"><img src="ivan-photo.jpg" alt="Иллюстративный портрет мужчины зимой"></div>
-        <div class="ivan-copy"><span class="eyebrow">История 02</span><h2 id="ivan-title" class="display">Иван<br>Васильевич</h2><p class="role">Инженер-теплотехник</p><p class="line display">Знает, как согреть целый дом. Сейчас тепло нужно ему самому.</p><p class="tiny">За QR-кодом на баннере — история человека и возможность поддержать работу Ночлежки.</p><a class="text-link" href="#help">Как помогает Ночлежка</a></div>
-      </div>
-    </section>
-    <section class="help" id="help" aria-labelledby="help-title">
-      <div class="wrap"><span class="section-index">Как работает помощь</span><h2 id="help-title" class="display">Сначала —<br>безопасная ночь.<br>Потом — следующий шаг.</h2><div class="help-row">
-        <details class="help-step"><summary><span class="num">01 <span class="plus" aria-hidden="true">+</span></span><h3 class="display">Ночлег</h3><p>Человеку нужно место, где можно отдохнуть в безопасности.</p></summary><p class="expanded">Ночь в тепле даёт возможность выспаться и спокойно решать срочные вопросы.</p></details>
-        <details class="help-step"><summary><span class="num">02 <span class="plus" aria-hidden="true">+</span></span><h3 class="display">Документы</h3><p>Поддержка помогает заняться вопросами, которые сложно решать с улицы.</p></summary><p class="expanded">Социальный работник помогает понять, какие документы нужно восстановить и с чего начать.</p></details>
-        <details class="help-step"><summary><span class="num">03 <span class="plus" aria-hidden="true">+</span></span><h3 class="display">Планы</h3><p>Когда появляется опора, легче думать о работе и будущем.</p></summary><p class="expanded">Следующие шаги у каждого человека свои. Возвращение к работе становится возможным, когда решены самые срочные вопросы.</p></details>
-      </div></div>
-    </section>
-    <section class="call" aria-labelledby="call-title"><div class="wrap call-inner"><div><h2 id="call-title" class="display">Помогите<br>пережить<br>ночь</h2><p>Пожертвование поддерживает работу Ночлежки и помощь людям, которые остались без дома.</p></div><a class="button" href="https://homeless.ru/how_to_help/" target="_blank" rel="noopener">Помочь Ночлежке</a></div></section>
   </main>
-  <dialog class="profile-dialog" id="profession-dialog" aria-labelledby="dialog-name">
-    <div class="dialog-top"><span>Пример визитки</span><button class="dialog-close" type="button" id="dialog-close" aria-label="Закрыть историю">Закрыть</button></div>
-    <h2 class="display" id="dialog-name"></h2>
-    <p class="dialog-role" id="dialog-role"></p>
-    <p class="dialog-copy display" id="dialog-copy"></p>
-    <a class="button" href="https://homeless.ru/how_to_help/" target="_blank" rel="noopener">Поддержать Ночлежку</a>
-  </dialog>
-  <footer><div class="wrap foot"><span class="brand">НОЧЛЕЖКА</span><small>Визуальный концепт кампании. Имена и изображения героев приведены для примера.</small></div></footer>
+  <footer class="footer"><div class="container footer-inner"><span class="brand">НОЧЛЕЖКА</span><small>Визуальный концепт кампании. Имена и изображения героев приведены для примера.</small></div></footer>
   <script>
-    const frames = {
-      before: ['Раньше', 'Работал с системами отопления и помогал сохранять тепло в домах.'],
-      now: ['Сейчас', 'Ему самому нужно место, где можно пережить ночь в тепле.'],
-      next: ['Следующий шаг', 'Безопасный ночлег и помощь с документами помогут искать путь обратно к работе.']
+    const profiles = {
+      anna: {count:'01 / 04', name:'Анна Сергеевна', role:'Повар', skill:'Готовила обеды на сто человек.', need:'Безопасное место для ночлега.'},
+      ivan: {count:'02 / 04', name:'Иван Васильевич', role:'Инженер-теплотехник', skill:'Знает, как найти причину холодных батарей.', need:'Ночлег и помощь с документами.'},
+      olga: {count:'03 / 04', name:'Ольга Николаевна', role:'Медсестра', skill:'Помогала людям встать на ноги.', need:'Поддержка, чтобы самой снова обрести опору.'},
+      mikhail: {count:'04 / 04', name:'Михаил Андреевич', role:'Водитель автобуса', skill:'Каждый вечер отвозил людей домой.', need:'Место, куда самому можно вернуться.'}
     };
-    const frameButtons = document.querySelectorAll('[data-frame]');
-    frameButtons.forEach(button => button.addEventListener('click', () => {
-      const [label, copy] = frames[button.dataset.frame];
-      document.getElementById('frame-label').textContent = label;
-      document.getElementById('frame-copy').textContent = copy;
-      frameButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    const buttons = [...document.querySelectorAll('[data-person]')];
+    const fields = {count:document.getElementById('profile-count'),name:document.getElementById('profile-name'),role:document.getElementById('profile-role'),skill:document.getElementById('profile-skill'),need:document.getElementById('profile-need')};
+    const splitRange = document.getElementById('split-range');
+    const splitStage = document.getElementById('split-stage');
+    function updateSplit() { splitStage.style.setProperty('--split', splitRange.value + '%'); }
+    function fitSplit() {
+      const mobile = window.matchMedia('(max-width:600px)').matches;
+      splitRange.min = mobile ? 38 : 32;
+      splitRange.max = mobile ? 62 : 68;
+      splitRange.value = 50;
+      updateSplit();
+    }
+    splitRange.addEventListener('input', updateSplit);
+    window.addEventListener('resize', fitSplit);
+    fitSplit();
+    buttons.forEach(button => button.addEventListener('click', () => {
+      const selected = profiles[button.dataset.person];
+      for (const key in fields) fields[key].textContent = selected[key];
+      buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      preventOrphans(document.querySelector('.profile'));
     }));
-
-    const range = document.getElementById('split-range');
-    const card = document.getElementById('split-card');
-    range.addEventListener('input', () => {
-      card.style.setProperty('--split', `${range.value}%`);
-      range.setAttribute('aria-valuetext', `${range.value} процентов — опыт, ${100 - range.value} процентов — текущая потребность`);
-    });
-
-    const people = {
-      builder: ['Сергей Петрович', 'Строитель', 'Строил дома, в которых живут люди. Сейчас ему самому негде жить.'],
-      nurse: ['Ольга Николаевна', 'Медсестра', 'Знает, как поставить человека на ноги. Сейчас ей самой нужна поддержка.'],
-      electrician: ['Алексей Михайлович', 'Электрик', 'Возвращал свет в чужие дома. Сейчас ему самому негде включить свет.'],
-      seamstress: ['Наталья Викторовна', 'Швея', 'Сшила сотни тёплых пальто. Сейчас ей самой негде укрыться от холода.'],
-      driver: ['Михаил Андреевич', 'Водитель автобуса', 'Каждый вечер отвозил людей домой. Сейчас ему самому некуда возвращаться.'],
-      teacher: ['Елена Павловна', 'Учительница', 'Объясняла детям, как устроен мир. Сейчас ей самой нужна поддержка.'],
-      locksmith: ['Виктор Семёнович', 'Слесарь', 'Знает, как починить почти всё. Сейчас ему нужна помощь, чтобы наладить собственную жизнь.']
-    };
-    const dialog = document.getElementById('profession-dialog');
-    document.querySelectorAll('[data-profession]').forEach(button => {
-      button.addEventListener('click', () => {
-        const [name, role, copy] = people[button.dataset.profession];
-        document.getElementById('dialog-name').textContent = name;
-        document.getElementById('dialog-role').textContent = role;
-        document.getElementById('dialog-copy').textContent = copy;
-        dialog.showModal();
-      });
-    });
-    document.getElementById('dialog-close').addEventListener('click', () => dialog.close());
-    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    function preventOrphans(root) {
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      for (const node of nodes) {
+        if (node.parentElement.closest('script,style,code')) continue;
+        node.nodeValue = node.nodeValue.replace(/(^|[\s(«])((?:в|во|с|со|к|ко|у|о|об|на|не|и|а|но|по|до|от|из|за|для|при|под|без|над))\s+(?=\S)/giu, '$1$2\u00a0');
+      }
+    }
+    preventOrphans(document.body);
   </script>
 </body>
 </html>
